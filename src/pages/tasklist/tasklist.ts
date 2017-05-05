@@ -12,6 +12,9 @@ import { Component } from '@angular/core';
 // import { NavController } from 'ionic-angular';
 import {NavController, ItemSliding} from 'ionic-angular';
 
+// we need to inject this class definition
+import { Task } from './task';
+
 // Component decorator defines its templateUrl as ‘tasklist.html’ 
 // and the selector to be page-tasklist.
 
@@ -21,7 +24,7 @@ import {NavController, ItemSliding} from 'ionic-angular';
 })
 export class TaskListPage {
 
-  tasks: Array<any> = [];
+  tasks: Array<Task> = [];
 
   constructor(public navCtrl: NavController)  {
   this.tasks = [
@@ -39,12 +42,12 @@ export class TaskListPage {
       }
   }
 
-  markAsDone(slidingItem: ItemSliding, task: any) {
+  markAsDone(slidingItem: ItemSliding, task: Task) {
        task.status = "done";
        slidingItem.close();
   }
 
-  removeTask(slidingItem: ItemSliding, task: any) {
+  removeTask(slidingItem: ItemSliding, task: Task) {
        task.status = "removed";
        let index = this.tasks.indexOf(task);
        if (index > -1) {
