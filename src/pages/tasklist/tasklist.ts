@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 // Angular, is you have to import the components, and features from Angular 
 // and Ionic in order to use them. 
 
-import { NavController } from 'ionic-angular';
+// import { NavController } from 'ionic-angular';
+import {NavController, ItemSliding} from 'ionic-angular';
 
 // Component decorator defines its templateUrl as ‘tasklist.html’ 
 // and the selector to be page-tasklist.
@@ -38,16 +39,18 @@ export class TaskListPage {
       }
   }
 
-  markAsDone(task: any) {
+  markAsDone(slidingItem: ItemSliding, task: any) {
        task.status = "done";
+       slidingItem.close();
   }
 
-  removeTask(task: any) {
+  removeTask(slidingItem: ItemSliding, task: any) {
        task.status = "removed";
        let index = this.tasks.indexOf(task);
        if (index > -1) {
           this.tasks.splice(index, 1);
        }
+       slidingItem.close();
   }
 
 }

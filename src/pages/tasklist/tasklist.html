@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar>
     <ion-title>Ionic Tasks</ion-title>
@@ -22,7 +23,7 @@
       -->
       
       <ion-list>
-      <ion-item-sliding *ngFor="let task of tasks">
+      <ion-item-sliding *ngFor="let task of tasks" #slidingItem>
         
         <!--
           Angular provides a method of conditionally applying CSS classes to an element. We will have Angular apply the CSS class, taskdone if the task’s status property is done to our <ion-item>
@@ -32,10 +33,10 @@
           {{task.title}}
         </ion-item>
         <ion-item-options side="right">
-          <button ion-button icon-only (click)="markAsDone(task)" color="secondary">
+          <button ion-button icon-only (click)="markAsDone(slidingItem, task)" color="secondary">
             <ion-icon name="checkmark"></ion-icon>
           </button>
-          <button ion-button icon-only (click)="removeTask(task)" color="danger">
+          <button ion-button icon-only (click)="removeTask(slidingItem, task)" color="danger">
             <ion-icon name="trash"></ion-icon>
           </button>
         </ion-item-options>
