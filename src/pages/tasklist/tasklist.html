@@ -23,6 +23,7 @@
       -->
       
       <ion-list>
+      <!-- adding Async pipe --> 
       <ion-item-sliding *ngFor="let task of tasks | async" #slidingItem (ionSwipe)="removeTask(slidingItem, task)">
         
         <!--
