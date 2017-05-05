@@ -1,3 +1,16 @@
+import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
+// import the actual components from the angularfire2
+import { AngularFireModule } from 'angularfire2';
+import { MyApp } from './app.component';
+// import { HomePage } from '../pages/home/home';
+import { TaskListPage } from '../pages/tasklist/tasklist';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyDW4r711eDdzQYNUcXuX2I-uVRGXFyOjd0",
     authDomain: "tasks-8fd38.firebaseapp.com",
@@ -6,20 +19,6 @@ export const firebaseConfig = {
     storageBucket: "tasks-8fd38.appspot.com",
     messagingSenderId: "810885243354"
 };
-
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
-// import the actual components from the angularfire2
-import { AngularFireModule } from 'angularfire2';
-
-// import { HomePage } from '../pages/home/home';
-import { TaskListPage } from '../pages/tasklist/tasklist';
 
 @NgModule({
   declarations: [
