@@ -1,7 +1,3 @@
-
-// In fact, this is the bare minimum to create an Ionic Page
-
-
 // We first import the Component module from the Angular core library. 
 // Just like the App component was standardized to Component, 
 // so was the Page component standardized also to Component.
@@ -15,8 +11,8 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-// Component decorator defines its templateUrl as ‘home.html’ 
-// and the selector to be page-home.
+// Component decorator defines its templateUrl as ‘tasklist.html’ 
+// and the selector to be page-tasklist.
 
 @Component({
   selector: 'page-tasklist',
@@ -24,8 +20,15 @@ import { NavController } from 'ionic-angular';
 })
 export class TaskListPage {
 
-  constructor(public navCtrl: NavController) {
-    
+  tasks: Array<Object> = [];
+
+  constructor(public navCtrl: NavController)  {
+  this.tasks = [
+          {title:'Milk', status: 'open'},
+          {title:'Eggs', status: 'open'},
+          {title:'Syrup', status: 'open'},
+          {title:'Pancake Mix', status: 'open'}
+          ];
   }
 
 }
