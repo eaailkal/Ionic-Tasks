@@ -20,7 +20,7 @@ import { NavController } from 'ionic-angular';
 })
 export class TaskListPage {
 
-  tasks: Array<Object> = [];
+  tasks: Array<any> = [];
 
   constructor(public navCtrl: NavController)  {
   this.tasks = [
@@ -29,6 +29,25 @@ export class TaskListPage {
           {title:'Syrup', status: 'open'},
           {title:'Pancake Mix', status: 'open'}
           ];
+  }
+
+  addItem() {
+      let theNewTask: string = prompt("New Task");
+      if (theNewTask !== '') {
+        this.tasks.push({ title: theNewTask, status: 'open' });
+      }
+  }
+
+  markAsDone(task: any) {
+       task.status = "done";
+  }
+
+  removeTask(task: any) {
+       task.status = "removed";
+       let index = this.tasks.indexOf(task);
+       if (index > -1) {
+          this.tasks.splice(index, 1);
+       }
   }
 
 }
