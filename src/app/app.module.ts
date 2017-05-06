@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { TaskListPage } from '../pages/tasklist/tasklist';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Dialogs } from '@ionic-native/dialogs';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDW4r711eDdzQYNUcXuX2I-uVRGXFyOjd0",
@@ -44,6 +45,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    Dialogs
     { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
