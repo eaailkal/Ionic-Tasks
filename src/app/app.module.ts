@@ -45,7 +45,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    Dialogs
+    Dialogs,
     { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
