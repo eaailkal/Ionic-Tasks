@@ -22,7 +22,7 @@
       
       <ion-list>
       <!-- adding Async pipe --> 
-      <ion-item-sliding *ngFor="let task of tasks | async" #slidingItem (ionSwipe)="removeTask(slidingItem, task)">
+      <ion-item-sliding *ngFor="let task of tasks | async" #slidingItem>
         
         <!--
           Angular provides a method of conditionally applying CSS classes to an element. We will have Angular apply the CSS class, taskdone if the task’s status property is done to our <ion-item>
