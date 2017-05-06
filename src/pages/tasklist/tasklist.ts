@@ -5,7 +5,7 @@
 import { Component } from '@angular/core';
 
 // import AngularFire and FirebaseListObservable modules from the AngularFire 2 library
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 // import { NavController } from 'ionic-angular';
 import {NavController, ItemSliding} from 'ionic-angular';
@@ -25,10 +25,10 @@ export class TaskListPage {
   tasks: FirebaseListObservable<any[]>;
 
   // Our component is going to be using the AngularFire library to communicate with our Firebase database. In order to do this, we will need to pass a reference to that library as a parameter in our constructor
-  constructor(public navCtrl: NavController, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
   
   // Since our list of tasks is going to be stored remotely, we can replace our initial tasks array with the AngularFire request to return the data in the tasks sub-directory
-  this.tasks = af.database.list('/tasks');
+  this.tasks = db.list('/tasks');
   }
 
   addItem() {
@@ -43,14 +43,14 @@ export class TaskListPage {
        slidingItem.close();
   }
 
-  removeTask(slidingItem: ItemSliding, task: Task) {
-       task.status = "removed";
-       let index = this.tasks.indexOf(task);
-       if (index > -1) {
-          this.tasks.splice(index, 1);
-       }
-       slidingItem.close();
-  }
+  // removeTask(slidingItem: ItemSliding, task: Task) {
+  //      task.status = "removed";
+  //      let index = this.tasks.indexOf(task);
+  //      if (index > -1) {
+  //         this.tasks.splice(index, 1);
+  //      }
+  //      slidingItem.close();
+  // }
 
 }
 
