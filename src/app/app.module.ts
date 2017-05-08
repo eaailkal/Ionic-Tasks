@@ -16,12 +16,11 @@ import { Dialogs } from '@ionic-native/dialogs';
 
 // Firebase credentials
 export const firebaseConfig = {
-    apiKey: "AIzaSyDW4r711eDdzQYNUcXuX2I-uVRGXFyOjd0",
-    authDomain: "tasks-8fd38.firebaseapp.com",
-    databaseURL: "https://tasks-8fd38.firebaseio.com",
-    projectId: "tasks-8fd38",
-    storageBucket: "tasks-8fd38.appspot.com",
-    messagingSenderId: "810885243354"
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
 };
 
 @NgModule({

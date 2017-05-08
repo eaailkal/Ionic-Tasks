@@ -14,22 +14,21 @@ $ npm install -g ionic cordova
 
 ### Copy project files and install project dependencies
 
-With Ionic and Cordova in place 
+With Ionic and Cordova in place run:
 
 ```
 $ ionic start Tasks https://github.com/eaailkal/Ionic-Tasks --v2
 ```
 
-Installing necessary platform tools. On Windows iOS platform is not available. On Mac OSX iOS platform is added automatically. In order to add to the project Android platform, run:
+Once the process is completed, navigate to the Tasks directory that was generated:
 
 ```
-$ ionic platform add android --save
+cd Tasks
 ```
-
 
 ## Connecting with Firebase 
 
-To add Firebase to your app, you'll need a Firebase project, the Firebase SDK, and a short snippet of initialization [code that has a few details about your project](https://firebase.google.com/docs/web/setup). Open in the code editor file 'app.module.ts' from the /src/app/ and replace example credentials with your own Firebase credentials.
+To add Firebase to your app, you'll need a Firebase project, the Firebase SDK, and a short snippet of initialization [code that has a few details about your project](https://firebase.google.com/docs/web/setup). Open in the code editor file 'app.module.ts' from the /src/app/ directory and replace example credentials with your own Firebase credentials.
 
 ```
 // your project's customized code snippet from Firebase
@@ -40,15 +39,9 @@ To add Firebase to your app, you'll need a Firebase project, the Firebase SDK, a
     messagingSenderId: "<SENDER_ID>",
 ```
 
-## Test and Deployment
+## Testing in the browser 
 
-To test app in a browser navigate to the project folder: 
-
-```
-$ cd Tasks
-
-```
-And run:  
+To test app in a browser run:  
 
 ```
 $ ionic serve
@@ -58,6 +51,14 @@ To view in a phone frame and with iOS and Android platforms side-by-sid run:
 
 ```
 $ ionic serve --lab
+```
+
+## Installing necessary platform tools. 
+
+On Windows iOS platform is not available. On Mac OSX iOS platform is added automatically. In order to add to the project Android platform, run:
+
+```
+$ ionic platform add android --save
 ```
 
 You can test app in the simulator using the cordova commands. For example, to test in the iOS simulator, run:
