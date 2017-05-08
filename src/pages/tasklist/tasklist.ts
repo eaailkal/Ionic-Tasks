@@ -39,6 +39,8 @@ export class TaskListPage {
   }
 
   addItem() {
+    // You are accessing native plugins while testing in the browser. 
+    // In order to make plugins work, you should use a real device to test.
     this.dialogs.prompt('Add a task', 'My tasks', ['Ok', 'Cancel'], '').then(
       theResult => {
         if ((theResult.buttonIndex == 1) && (theResult.input1 !== '')) {

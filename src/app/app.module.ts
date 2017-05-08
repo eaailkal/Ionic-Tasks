@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Dialogs } from '@ionic-native/dialogs';
 
+// Firebase credentials
 export const firebaseConfig = {
     apiKey: "AIzaSyDW4r711eDdzQYNUcXuX2I-uVRGXFyOjd0",
     authDomain: "tasks-8fd38.firebaseapp.com",

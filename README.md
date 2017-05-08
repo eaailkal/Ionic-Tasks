@@ -1,80 +1,105 @@
 # Ionic-Tasks
 
-Ionic "to-do list" app with integration with database
+This is a hybrid "to-do list" app built with Ionic 2 framework and Firebase.
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+Latest version of the Ionic CLI and Cordova CLI are needed for creating Ionic projects. Before you do that, you’ll need a recent version of Node.js. [Install Node.js 6](https://nodejs.org/) or greater and then proceed to install the Ionic CLI and Cordova.
 
 ```
-Give examples
+$ npm install -g ionic cordova
 ```
 
-### Installing
 
-A step by step series of examples that tell you have to get a development env running
+### Copy project files and install project dependencies
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+With Ionic and Cordova in place 
 
 ```
-until finished
+$ ionic start Tasks https://github.com/eaailkal/Ionic-Tasks --v2
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Installing necessary platform tools. On Windows iOS platform is not available. On Mac OSX iOS platform is added automatically. In order to add to the project Android platform, run:
 
 ```
-Give an example
+$ ionic platform add android --save
 ```
 
-### And coding style tests
 
-Explain what these tests test and why
+## Connecting with Firebase 
+
+To add Firebase to your app, you'll need a Firebase project, the Firebase SDK, and a short snippet of initialization [code that has a few details about your project](https://firebase.google.com/docs/web/setup). Open in the code editor file 'app.module.ts' from the /src/app/ and replace example credentials with your own Firebase credentials.
 
 ```
-Give an example
+// your project's customized code snippet from Firebase
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
 ```
 
-## Deployment
+## Test and Deployment
 
-Add additional notes about how to deploy this on a live system
+To test app in a browser navigate to the project folder: 
+
+```
+$ cd Tasks
+
+```
+And run:  
+
+```
+$ ionic serve
+
+```
+To view in a phone frame and with iOS and Android platforms side-by-sid run:  
+
+```
+$ ionic serve --lab
+```
+
+You can test app in the simulator using the cordova commands. For example, to test in the iOS simulator, run:
+
+```
+$ ionic build ios
+$ ionic emulate ios
+```
+
+Substitute **ios** with **android** for Android testing. Testing as a native app on Android is more easier than on iOS. 
+
+**Android development environment requirements**
+* [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Android Studio](https://developer.android.com/studio/index.html)
+* [Updated Android SDK tools, platform and component dependencies](https://developer.android.com/studio/intro/update.html)
+
+Make sure you have Developer Mode and [USB debugging enabled](http://developer.android.com/tools/device.html) on your mobile, plug it in, and run:
+
+```
+$ ionic run android --device
+```
+
+To build app for production, run:
+
+```
+$ ionic build android --prod --release
+```
+
+More information regaring deployment provided in [Ionic documentation](https://ionicframework.com/docs/intro/deploying/) online.
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Ionic 2](http://ionicframework.com) - Framework for building hybrid apps
+* [Angular 2](https://angular.io) - Java Script framework
+* [Firebase](https://firebase.google.com) - Cloud Database by Google
+* [NPM](https://www.npmjs.com) - Dependency management
+* [Visual Studio Code](https://code.visualstudio.com) - Open source code editor
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* [Ilya Kalinkin](https://github.com/eaailkal)
 
 ## License
 
@@ -82,9 +107,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* 
+* **Chris Griffith** [Tutorial](https://github.com/chrisgriffith/Ionic2Do/tree/Firebase) 
 
 ## Future improvements
 
